@@ -19,7 +19,7 @@ typedef StackNode *LinkStackPtr;
 typedef struct LinkStack
 {
     LinkStackPtr top;
-    int count;
+    int count=0;
 };
 
 //空指针为 栈底  所以是  从栈顶指向栈底
@@ -76,7 +76,7 @@ Status DestroyStack(LinkStack *S)
     {
         q = p;
         p = p->next;
-        free(q);
+        delete q;
     }
     S->count = 0;
     return OK;
@@ -90,6 +90,6 @@ int main()
     if (InitStack(&s) == OK)
         for (j = 1; j <= 10; j++)
             push(&s, j);
-
+    
     DestroyStack(&s);
 }
