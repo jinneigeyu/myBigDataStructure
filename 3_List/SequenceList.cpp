@@ -13,6 +13,7 @@ typedef struct
 
 int main()
 {
-    
+    std::cout<<"what !!"<<std::endl;
+    system("pause");
 }
 
